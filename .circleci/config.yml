@@ -43,7 +43,7 @@ orbs:
               background: true
               command: |
                 chmod +x << parameters.data-dir >>/metricbeat
-                << parameters.data-dir >>/metricbeat -e -E cloud.id="${MBCI}" -E cloud.auth="${ESU}:${ESP}" -c << parameters.data-dir >>/metricbeat.yml
+                << parameters.data-dir >>/metricbeat -e -E beat.name="${CIRCLE_PROJECT_REPONAME}-${CIRCLE_BUILD_NUM}" -E cloud.id="${MBCI}" -E cloud.auth="${ESU}:${ESP}" -c << parameters.data-dir >>/metricbeat.yml
 
 
 version: 2
